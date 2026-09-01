@@ -1,12 +1,16 @@
 {
   "name": "banking-ledger",
-  "module": "index.ts",
-  "type": "module",
+  "version": "1.0.0",
   "private": true,
-  "devDependencies": {
-    "@types/bun": "latest"
+  "workspaces": ["apps/*", "packages/*"],
+  "scripts": {
+    "dev": "bun --env-file=.env --parallel run dev:api dev:web",
+    "dev:api": "bun --hot --env-file=.env apps/api/server.ts",
+    "dev:web": "bun --env-file=.env run --filter '@banking-ledger/web' dev",
+    "start": "bun --env-file=.env apps/api/server.ts"
   },
-  "peerDependencies": {
+  "devDependencies": {
+    "@types/bun": "latest",
     "typescript": "^5.9.3"
   }
 }

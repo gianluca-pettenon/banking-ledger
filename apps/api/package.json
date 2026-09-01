@@ -1,0 +1,9 @@
+{
+  "name": "@banking-ledger/api",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "bun --hot run server.ts",
+    "start": "bun run server.ts"
+  }
+}
