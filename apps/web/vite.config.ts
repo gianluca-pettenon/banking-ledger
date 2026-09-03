@@ -1,13 +1,21 @@
-import react, { reactCompilerPreset } from '@vitejs/plugin-react'
-import babel from '@rolldown/plugin-babel'
-import { defineConfig, loadEnv } from 'vite'
+import path from 'node:path';
+import babel from '@rolldown/plugin-babel';
+import tailwindcss from '@tailwindcss/vite';
+import react, { reactCompilerPreset } from '@vitejs/plugin-react';
+import { defineConfig, loadEnv } from 'vite';
 
 export default defineConfig(({ mode }) => {
   const env = loadEnv(mode, '../..', '');
 
   return {
     envDir: '../..',
+    resolve: {
+      alias: {
+        '@': path.resolve(__dirname, 'src'),
+      },
+    },
     plugins: [
+      tailwindcss(),
       react(),
       babel({ presets: [reactCompilerPreset()] }),
     ],
@@ -21,5 +29,5 @@ export default defineConfig(({ mode }) => {
         },
       },
     },
-  }
-})
+  };
+});

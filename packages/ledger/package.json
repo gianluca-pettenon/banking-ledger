@@ -1,0 +1,11 @@
+{
+  "name": "@banking-ledger/ledger",
+  "private": true,
+  "type": "module",
+  "exports": {
+    ".": "./src/index.ts"
+  },
+  "dependencies": {
+    "@banking-ledger/terms": "workspace:*"
+  }
+}
