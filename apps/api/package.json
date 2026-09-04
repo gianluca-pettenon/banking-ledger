@@ -1,12 +1,14 @@
 {
-  "name": "@banking-ledger/api",
-  "private": true,
-  "type": "module",
-  "dependencies": {
-    "@banking-ledger/ledger": "workspace:*"
-  },
-  "scripts": {
-    "dev": "bun --hot run server.ts",
-    "start": "bun run server.ts"
-  }
+	"name": "@banking-ledger/api",
+	"private": true,
+	"type": "module",
+	"dependencies": {
+		"@banking-ledger/ledger": "workspace:*",
+		"@elysia/openapi": "^1.4.16",
+		"elysia": "^1.4.30"
+	},
+	"scripts": {
+		"dev": "bun --hot run src/server.ts",
+		"start": "bun run src/server.ts"
+	}
 }
